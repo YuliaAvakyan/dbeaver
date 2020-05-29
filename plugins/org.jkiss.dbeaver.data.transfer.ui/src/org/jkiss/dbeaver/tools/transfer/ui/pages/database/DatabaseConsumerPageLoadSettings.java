@@ -163,10 +163,6 @@ public class DatabaseConsumerPageLoadSettings extends ActiveWizardPage<DataTrans
             String tableNames = getWizard().getSettings().getDataPipes().stream().map(pipe -> pipe.getConsumer() == null ? "" : pipe.getConsumer().getObjectName()).collect(Collectors.joining(","));
             if (!UIUtils.confirmAction(shell, DTUIMessages.data_transfer_db_page_load_settings_dialog_truncate_attention_title,
             		NLS.bind(DTUIMessages.data_transfer_db_page_load_settings_dialog_truncate_attention_text, tableNames )))
-//            		"'Truncate target table' option is enabled.\n" +
-//                "This will remove ALL data from target table(s) (" + tableNames + ").\n" +
-//                "it will not be possible to revert this.\n" +
-//                "Are you absolutely sure you want to proceed?"))
             {
                 return false;
             }
